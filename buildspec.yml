@@ -13,5 +13,5 @@ artifacts:
  files:
    - "target/spring-boot-aws-lambda.jar"
    - "Procfile"
-   - "serverless.yml"
+   - "appspec.yml"
  discard-paths: yes
