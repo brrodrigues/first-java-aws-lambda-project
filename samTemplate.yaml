@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: '2019-03-31'
+Transform: AWS::Serverless-2019-03-31
+Description: Outputs the time
+Resources:
+  TimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: rio.brunorodrigues.function.LambdaHandler
+      Runtime: java8
