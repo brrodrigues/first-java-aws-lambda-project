@@ -1,0 +1,1 @@
+web: java -jar spring-boot-aws-lambda.jar
