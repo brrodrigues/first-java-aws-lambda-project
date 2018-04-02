@@ -9,7 +9,7 @@ Resources:
       Runtime: java8
       CodeUri: s3://codepipeline-us-east-1-958283805552/user-service.jar
       MemorySize: 1512
-      Policies: AWSLambdaBasicExecutionRole, AmazonDynamoDBFullAccess
+      Policies: [AWSLambdaBasicExecutionRole, AmazonDynamoDBFullAccess]
       Timeout: 60
       Events:
         GetResource:
