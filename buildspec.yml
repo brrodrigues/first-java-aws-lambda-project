@@ -7,7 +7,7 @@ phases:
      - mvn clean package
      - echo Executing packaging on cloudformation on s3 bucket s3://codepipeline-us-east-1-958283805552/user-service.jar
      - aws cloudformation package --template-file sam.yaml --output-template-file output-sam.yaml --s3-bucket s3://codepipeline-us-east-1-958283805552/user-service.jar
-     - aws cloudformation deploy --template-file output-sam.yaml --stack-name ServerlessSpringBoot --capabilities CAPABILITY_NAMED_IAM
+     - aws cloudformation deploy --template-file output-sam.yaml --stack-name ServerlessSpringBoot --capabilities CAPABILITY_IAM
  post_build:
    commands:
      - echo App packaged on `date`.
