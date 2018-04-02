@@ -11,8 +11,7 @@ phases:
 artifacts:
  type: zip
  files:
-   - "target/spring-boot-aws-lambda.jar"
+   - "target/user-service.jar"
    - "Procfile"
-   - "appspec.yml"
-   - "samTemplate.yaml"
+   - "sam.yaml"
  discard-paths: yes
