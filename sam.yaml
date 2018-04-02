@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: rio.brunorodrigues.function.handle.LambdaHandler::handleRequest
       Runtime: java8
-      CodeUri: ./target/user-service.jar
+      CodeUri: s3://codepipeline-us-east-1-958283805552/user-service.jar
       MemorySize: 1512
       Policies: AWSLambdaBasicExecutionRole, AmazonDynamoDBFullAccess
       Timeout: 60
