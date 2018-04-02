@@ -8,8 +8,6 @@ Resources:
       Handler: rio.brunorodrigues.function.handle.LambdaHandler::handleRequest
       Runtime: java8
       CodeUri: target/user-service.jar
-      CurrentVersion: "0"
-      TargetVersion: "1"
       MemorySize: 1512
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 60
