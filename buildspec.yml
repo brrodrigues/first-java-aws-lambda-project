@@ -6,7 +6,7 @@ phases:
      - echo Packaging app on `date`
      - mvn clean package
      - echo Executing packaging on cloudformation on s3 bucket s3://codepipeline-us-east-1-958283805552/user-service.jar
-     - aws cloudformation package --template-file sam.yaml --output-template-file output-sam.yaml --s3-bucket ./user-service.jar --s3-prefix codepipeline-us-east-1-958283805552
+     - aws cloudformation package --template-file sam.yaml --output-template-file output-sam.yaml --s3-bucket user-service --s3-prefix codepipeline-us-east-1-958283805552
      - echo Executing deploying on cloudformation with stack called UserMicroserviceSpringBoot
      - aws cloudformation deploy --template-file output-sam.yaml --stack-name UserMicroserviceSpringBoot --capabilities CAPABILITY_IAM
  post_build:
