@@ -5,14 +5,14 @@ phases:
    commands:
      - echo Packaging app on `date`
      - mvn clean package
-
+     - aws cloudformation package --template-file samTemplate.yaml --s3-bucket codepipeline-us-east-1-958283805552 --output-template-file output-sam.yaml
  post_build:
    commands:
      - echo App packaged on `date`.
 artifacts:
- type: zip
+ type: jar
  files:
    - "target/user-service.jar"
-   - "Procfile"
    - "sam.yaml"
+   - "output-sam.yaml"
  discard-paths: yes
