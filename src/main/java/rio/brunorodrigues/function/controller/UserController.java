@@ -1,6 +1,8 @@
 package rio.brunorodrigues.function.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import rio.brunorodrigues.function.data.UserData;
 import rio.brunorodrigues.function.domain.User;
 
@@ -12,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
+@EnableWebMvc
 public class UserController {
 
     @PostMapping
@@ -22,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping
-    public Collection listUser(@RequestParam("limit") Optional<Integer> limit, Principal principal){
+    public Collection<User> listUser(@RequestParam("limit") Optional<Integer> limit, Principal principal){
         int queryLimit = 10;
 
         if (limit.isPresent()){
