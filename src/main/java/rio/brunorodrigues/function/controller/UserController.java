@@ -1,6 +1,5 @@
 package rio.brunorodrigues.function.controller;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import rio.brunorodrigues.function.data.UserData;

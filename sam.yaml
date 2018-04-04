@@ -5,12 +5,18 @@ Resources:
   UserService:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: UserService
+      Version: "0.0.1-SNAPSHOT"
       Handler: rio.brunorodrigues.function.handle.LambdaHandler::handleRequest
       Runtime: java8
       CodeUri: ./target/user-service.jar
       MemorySize: 1512
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 60
+      Tags:
+        -
+          Key: "user-service"
+          Value: "user-service"
       Events:
         GetResource:
           Type: Api
