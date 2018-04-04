@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: First Java Lamdba Project
 Resources:
-  UserFunction:
+  UserService:
     Type: AWS::Serverless::Function
     Properties:
       Handler: rio.brunorodrigues.function.handle.LambdaHandler::handleRequest
@@ -15,12 +15,21 @@ Resources:
         GetResource:
           Type: Api
           Properties:
-            Path: /{proxy+}
-            Method: any
-
+            Path: /users
+            Method: GET
+        PostResource:
+          Type: Api
+          Properties:
+            Path: /users
+            Method: POST
+        RetrieveResource:
+          Type: Api
+          Properties:
+            Path: /users/{id}
+            Method: GET
 Outputs:
-  SpringBootPetStoreApi:
+  SpringBootUserServiceApi:
     Description: URL for application
     Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Stage/users'
     Export:
-      Name: SpringBootPetStoreApi
+      Name: SpringBootUserServiceApi
