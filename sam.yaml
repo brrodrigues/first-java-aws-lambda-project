@@ -5,7 +5,6 @@ Resources:
   UserService:
     Type: AWS::Serverless::Function
     Properties:
-      Stage: DEV
       FunctionName: UserService
       Handler: rio.brunorodrigues.function.handle.LambdaHandler::handleRequest
       Runtime: java8
