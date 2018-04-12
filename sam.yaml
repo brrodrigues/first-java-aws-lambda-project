@@ -3,6 +3,7 @@ Transform: AWS::Serverless-2016-10-31
 Description: First Java Lamdba Project
 Resources:
   UserServiceApi:
+    Type: AWS::Serverless::Api
     DependsOn:
       - UserServiceFunction
     Properties:
