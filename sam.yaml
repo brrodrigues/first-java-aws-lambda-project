@@ -37,9 +37,6 @@ Resources:
           Properties:
             Path: /users
             Method: GET
-            Cors:
-              Origin: '*'
-              MaxAge: 86400
         PostResource:
           Type: Api
           Properties:
