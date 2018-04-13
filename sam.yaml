@@ -2,26 +2,6 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: First Java Lamdba Project
 Resources:
-  UserServiceApi:
-    Type: AWS::Serverless::Api
-    DependsOn:
-      - UserServiceFunction
-    Properties:
-      StageName: Dev
-      DefinitionBody:
-        swagger: 2.0
-        info:
-          title:
-            Ref: AWS::StackName
-        paths:
-          /users:
-            get:
-              responses: {}
-              x-amazon-apigateway-integration:
-                uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${UserServiceFunction.Arn}/invocations"
-                passthroughBehavior: "when_no_match"
-                httpMethod: "POST"
-                type: "aws_proxy"
   UserService:
     Type: AWS::Serverless::Function
     Properties:
